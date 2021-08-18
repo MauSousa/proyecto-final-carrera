@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./assets/css/contacto.css">
+  <title>Formulario De Inscripcion</title>
 </head>
 <body>
-	<a href="/">Home</a>
-	<a href="/contacto">Contacto</a>
-	<a href="/horario">Horario</a>
-	<a href="/pagos">Pagos</a>
-  <h1>Aquí va la parte de contacto, salu2</h1>
+  <!-- <header class="header">
+    <a href="/">Home</a>
+    <a href="/contacto">Contacto</a>
+    <a href="/horario">Horario</a>
+    <a href="/pagos">Pagos</a>
+  </header> -->
+<form class="form" id="form">
+  <h2 class="form_title">Regístrate para la capacitación</h2>
+  <p class="form_paragraph"><a href="#" class="form_link"></a></p>
+
+  <div class="form_container">
+    <div class="form_group">
+      <input type="text" id="name" class="form_input" placeholder="">
+      <label for="name" class="form_label">Nombre:</label>
+      <span class="form_line"></span>
+    </div>
+
+    <div class="form_group">
+      <input type="text" id="user" class="form_input" placeholder="">
+      <label for="user" class="form_label">Apellido:</label>
+      <span class="form_line"></span>
+    </div>
+
+    <div class="form_group">
+      <input type="text" id="password" class="form_input" placeholder="">
+      <label for="password" class="form_label">Correo:</label>
+      <span class="form_line"></span>
+    </div>
+    <input type="submit" class="form_submit" value="Entrar" >
+
+  </div>
+</form>
 </body>
+
 </html>
