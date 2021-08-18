@@ -27,6 +27,9 @@ class Server {
 		// Public folder
 		this.app.use(express.static('public'))
 		
+		// Body data
+		this.app.use( express.json() )
+
 	}
 
 	routes() {

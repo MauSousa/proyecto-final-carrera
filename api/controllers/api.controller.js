@@ -5,7 +5,17 @@ const apiGet = (req, res) => {
 }
 
 const apiPost = (req, res) => {
-  res.status(201).json({ msg: 'This is post from controller' })
+
+	const { name, lastName, email } = req.body
+
+  res.status(201).json(
+		{ 
+			msg: 'This is post from controller',
+			name,
+			lastName,
+			email
+		}
+	)
 }
 
 module.exports = {
