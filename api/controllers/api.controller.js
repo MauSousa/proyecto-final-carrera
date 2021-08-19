@@ -1,4 +1,5 @@
 const { response } = require('express')
+const { validationResult } = require('express-validator')
 const path = require('path')
 const Datos = require('../models/datos')
 
@@ -7,17 +8,17 @@ const apiGet = (req, res) => {
 }
 
 const apiPost = async(req, res) => {
+
+	const errors = validationResult(req)
+
+	if( !errors.isEmpty() ) {
+		return res.status(400).json(errors)
+	}
 	
 	const { name, lastName, email } = req.body
 	const datos = new Datos({ name, lastName, email })
 	
-	// Verificar email
-	const emailExists = await Datos.findOne({ email })
-	if( emailExists ) {
-		return res.status(400).json({
-			error: 'El correo ya existe'
-		})
-	}
+	
 
 	await datos.save()
 

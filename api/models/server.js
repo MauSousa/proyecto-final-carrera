@@ -13,6 +13,7 @@ class Server {
 		
 		// Static files
 		this.error = '*'
+		this.apiError = '/api/*'
 
 		// db connection
 		this.connectDB()
@@ -47,6 +48,7 @@ class Server {
 		
 		// static files
 		this.app.use(this.error,require('../routes/404'))
+		this.app.use(this.apiError,require('../routes/404'))
 
 
 	}
