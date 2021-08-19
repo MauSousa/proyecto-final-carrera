@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const { dbConnection } = require('../database/config')
 
 class Server {
 	
@@ -13,6 +14,9 @@ class Server {
 		// Static files
 		this.error = '*'
 
+		// db connection
+		this.connectDB()
+
 		// Middlewares
 		this.middlewares()
 
@@ -20,12 +24,16 @@ class Server {
 		this.routes()
 	}
 
+	async connectDB() {
+		await dbConnection()
+	}
+
 	middlewares() {
 
 		this.app.use( cors() )
 		
 		// Public folder
-		this.app.use(express.static('public'))
+		this.app.use( express.static('public') )
 		
 		// Body data
 		this.app.use( express.json() )
