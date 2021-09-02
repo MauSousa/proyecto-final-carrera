@@ -31,9 +31,6 @@ class Server {
 	routes() {
 		
 		// static files
-		this.app.use(this.horario,require('../routes/horario'))
-		this.app.use(this.contacto,require('../routes/contacto'))
-		this.app.use(this.pagos,require('../routes/pagos'))
 		this.app.use(this.error,require('../routes/404'))
 
 
